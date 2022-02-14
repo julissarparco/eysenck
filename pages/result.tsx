@@ -40,7 +40,7 @@ const Result: NextPage = () => {
           ?
           result?.map((res, index) => (
             <Grid item xs={2} sm={4} md={4} key={index}>
-              <Item>{res.question} {res.answer ? "Sí" : "No"}</Item>
+              <Item>{res?.question} {res?.answer ? "Sí" : "No"}</Item>
             </Grid>
           ))
           : `No se encontraron resultados para el ID: ${query?.id}`}
