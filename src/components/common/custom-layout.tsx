@@ -1,3 +1,3 @@
-const CustomLayout = ({ children }) => {};
+const CustomLayout = () => {};
 
 export default CustomLayout;

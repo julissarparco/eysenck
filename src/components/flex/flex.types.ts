@@ -1,6 +1,6 @@
 import { BoxProps } from "@mui/material/Box";
 
-export type FlexContextValue = "row" | "column" | "row-column" | "column-row";
+export type FlexContextValue = "row" | "column" | "row-column" | "column-row" | undefined;
 
 export type Position =
   | "left"
@@ -10,12 +10,14 @@ export type Position =
   | "middle"
   | "middle-right"
   | "center"
-  | string;
+  | string
+  | undefined;
 
 export type Gap =
   | number
   | string
-  | Partial<Record<"xs" | "sm" | "md" | "lg" | "xl", string | number>>;
+  | Partial<Record<"xs" | "sm" | "md" | "lg" | "xl", string | number>>
+  | undefined;
 
 export type ItemFlexProps = {
   position?: Position;

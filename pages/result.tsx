@@ -15,8 +15,13 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
+type QuestionDetail = {
+  question: number;
+  answer: string;
+};
+
 const Result: NextPage = () => {
-  const [result, setResult] = useState([]);
+  const [result, setResult] = useState<QuestionDetail[]>([]);
 
   const query = useRouter()?.query;
 
@@ -40,7 +45,7 @@ const Result: NextPage = () => {
           ?
           result?.map((res, index) => (
             <Grid item xs={2} sm={4} md={4} key={index}>
-              <Item>{res?.question} {res?.answer ? "Sí" : "No"}</Item>
+              <Item key={`item-${index}`}>{res?.question} {res?.answer ? "Sí" : "No"}</Item>
             </Grid>
           ))
           : `No se encontraron resultados para el ID: ${query?.id}`}
